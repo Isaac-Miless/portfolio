@@ -20,7 +20,10 @@ function Projects() {
         ></path>
       </svg>
 
-      <div id="projects" className="flex flex-col p-10 bg-stone-200 h-[40vh]">
+      <div
+        id="projects"
+        className="flex flex-col p-10 bg-stone-200 min-h-[40vh]"
+      >
         <div className="text-md md:text-xl text-left font-bold text-primary">
           PROJECTS
         </div>

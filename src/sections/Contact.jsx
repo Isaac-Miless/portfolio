@@ -8,7 +8,7 @@ function Contact() {
   return (
     <div
       id="contact"
-      className="flex flex-col text-md md:text-xl p-10 h-[30vh] lg:h-[30vh]"
+      className="flex flex-col text-md md:text-xl p-10 min-h-[30vh]"
     >
       <div className="text-left font-bold text-primary">CONTACT ME</div>
       <div className="flex flex-row gap-x-4 items-center justify-left mt-8 text-neutral text-left w-70vw md:w-[60vw]">
@@ -18,7 +18,7 @@ function Contact() {
       <div className="flex flex-row gap-5 justify-left items-center mt-5 group cursor-pointer">
         <a href={`mailto:${EMAIL}`}>
           <FontAwesomeIcon
-            className={`text-neutral group-hover:text-primary transition-colors duration-300 ease-in-out          }`}
+            className={`text-neutral group-hover:text-primary transition-colors duration-300 ease-in-out`}
             icon={faEnvelope}
             size="2x"
           />
