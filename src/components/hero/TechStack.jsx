@@ -20,23 +20,25 @@ const icons = [
 function TechStack() {
   return (
     <div className="flex flex-row space-x-4 items-center">
-      <div className="font-semibold pr-5 border-r border-r-neutral">
+      <div className="font-semibold text-md md:text-xl pr-5 border-r border-r-neutral">
         Tech Stack
       </div>
-      {icons.map((icon, index) => (
-        <div className="hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-          <img
-            key={index}
-            src={icon.src}
-            alt={icon.alt}
-            className="w-8 h-8 lg:h-10 lg:w-10 rounded-lg animate-slideInLeft"
-            style={{
-              animation: `slideInLeft 1s ease-out ${index * 0.3}s forwards`,
-              visibility: "hidden",
-            }}
-          />
-        </div>
-      ))}
+      <div className="flex flex-row flex-wrap space-x-4 w-[50vw]">
+        {icons.map((icon, index) => (
+          <div className="hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+            <img
+              key={index}
+              src={icon.src}
+              alt={icon.alt}
+              className="w-8 h-8 md:h-10 md:w-10 rounded-lg animate-slideInLeft"
+              style={{
+                animation: `slideInLeft 1s ease-out ${index * 0.3}s forwards`,
+                visibility: "hidden",
+              }}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ function AboutMe() {
   return (
     <div
       id="about"
-      className="flex flex-col justify-center items-center h-[90vh]"
+      className="flex flex-col justify-center items-center h-[90vh] lg:h-[70vh]"
     >
       <div className="relative flex flex-col items-center justify-center min-h-screen">
         <div className="relative flex items-center justify-center">

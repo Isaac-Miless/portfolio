@@ -9,14 +9,14 @@ import Footer from "./sections/Footer";
 
 function App() {
   return (
-    <>
+    <div className="m-0 overflow-hidden">
       <Navbar />
       <Hero />
       <AboutMe />
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

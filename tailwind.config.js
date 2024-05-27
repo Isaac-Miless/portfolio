@@ -52,7 +52,7 @@ module.exports = {
       },
       boxShadow: {
         // custom: "0 5px 5px 5px rgba(13, 100, 0, 0.1)",
-        custom: `0 10px 20px ${hexToRgba(primaryColor, 0.25)}`, // Increased blur and opacity for visibility
+        custom: `0 10px 20px ${hexToRgba(primaryColor, 0.5)}`, // Increased blur and opacity for visibility
       },
     },
   },
