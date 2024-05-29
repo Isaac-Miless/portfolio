@@ -17,14 +17,14 @@ const Navbar = () => {
       <div className="md:hidden relative">
         <button onClick={toggleMenu} className="relative z-10">
           <div
-            className={`transition-opacity duration-300 ease-in-out transform ${
+            className={`mr-2 transition-opacity duration-300 ease-in-out transform ${
               menuOpen ? "opacity-0 rotate-180" : "opacity-100 rotate-0"
             }`}
           >
             <FontAwesomeIcon icon={faBars} size="2x" />
           </div>
           <div
-            className={`absolute inset-0 transition-opacity duration-300 ease-in-out transform ${
+            className={`mr-2 absolute inset-0 transition-opacity duration-300 ease-in-out transform ${
               menuOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-180"
             }`}
           >
