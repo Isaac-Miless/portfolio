@@ -4,7 +4,7 @@ import SocialIcons from "../SocialIcons";
 function HeroInfo() {
   return (
     <>
-      <div className="flex flex-col gap-y-[10px] w-[70vw] md:w-[50vw] justify-center items-center">
+      <div className="flex flex-col gap-y-[10px] min-w-[70vw] md:min-w-[40vw] justify-center items-center">
         <div className="text-3xl md:text-4xl lg:text-5xl text-neutral font-bold text-center">
           Front-End Developer <span className="cursor-default">🧑‍💻</span>
         </div>

@@ -6,7 +6,7 @@ const SquareLayout = () => {
     <>
       <div
         style={{ backgroundImage: `url(${Iceland})` }}
-        className="w-[70vw] h-[50vw] md:w-[40vw] md:h-[25vh] border-2 border-primary bg-cover bg-center bg-primary flex items-center justify-center text-white z-10 shadow-custom rounded-lg"
+        className="min-w-[40vw] min-h-[30vw] md:min-w-[40vw] md:min-h-[25vw] lg:min-w-[30vw] lg:min-h-[30vh] border-2 border-primary bg-cover bg-center bg-primary flex items-center justify-center text-white z-10 shadow-custom rounded-lg"
       ></div>
     </>
   );

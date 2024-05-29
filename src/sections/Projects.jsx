@@ -22,7 +22,7 @@ function Projects() {
 
       <div
         id="projects"
-        className="flex flex-col p-10 bg-stone-200 min-h-[40vh]"
+        className="flex flex-col p-10 min-h-[20vh] bg-stone-200"
       >
         <div className="text-md md:text-xl text-left font-bold text-primary">
           PROJECTS
