@@ -6,9 +6,9 @@ function AboutMe() {
   return (
     <div
       id="about"
-      className="flex flex-col justify-center items-center max-h-[90vh] lg:max-h-[70vh]"
+      className="flex flex-col justify-center items-center min-h-[90vh] lg:min-h-[70vh]"
     >
-      <div className="relative flex flex-col items-center justify-center min-h-screen">
+      <div className="relative mt-5 mb-5 flex flex-col items-center justify-center min-h-screen">
         <div className="relative flex items-center justify-center">
           <ImageLayout />
         </div>

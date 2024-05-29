@@ -8,7 +8,7 @@ function AboutMeText() {
           ABOUT ME
         </span>
       </div>
-      <div className="mt-8 text-md lg:text-2xl text-neutral text-center w-[40vw] min-w-[40vw] md:w-[20vw]">
+      <div className="mt-8 text-md lg:text-2xl text-neutral text-center max-w-[70vw] md:min-w-[40vw] lg:max-w-[20vw]">
         Hello! I'm <span className="text-primary">Isaac</span>, a front-end
         developer and Software Engineering student at the University of Kent. My
         passion is creating applications that are both functional and visually
