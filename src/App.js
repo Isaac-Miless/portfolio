@@ -1,4 +1,5 @@
 import "./styles/global.css";
+import "./styles/hamburgers.css";
 import React from "react";
 import Hero from "./sections/Hero";
 import Navbar from "./components/navbar/Navbar";

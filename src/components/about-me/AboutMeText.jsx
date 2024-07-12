@@ -1,14 +1,13 @@
 import React from "react";
+import Header from "../Header";
 
 function AboutMeText() {
   return (
     <>
       <div className="mt-8">
-        <span className="text-md md:text-xl font-bold text-primary">
-          ABOUT ME
-        </span>
+        <Header title="ABOUT ME" />
       </div>
-      <div className="mt-8 text-md lg:text-2xl text-neutral text-center max-w-[70vw] md:min-w-[40vw] lg:max-w-[20vw]">
+      <div className="mt-8 text-xl lg:text-2xl text-neutral text-center max-w-[70vw] md:min-w-[40vw] lg:max-w-[20vw]">
         Hello! I'm <span className="text-primary">Isaac</span>, a front-end
         developer and Software Engineering student at the University of Kent. My
         passion is creating applications that are both functional and visually
