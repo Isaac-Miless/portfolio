@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import NavOption from "./NavOption";
 import { gsap } from "gsap";
@@ -12,31 +12,30 @@ const Navbar = () => {
 
   useEffect(() => {
     if (menuOpen) {
-      gsap.to(".navbar", {
+      gsap.to(".navbar-mobile", {
         x: 0,
         duration: 0.5,
         ease: "power2.out",
         opacity: 1,
         display: "flex",
       });
-      gsap.to(".nav-item", {
+      gsap.to(".nav-item-mobile", {
         opacity: 1,
         duration: 0.5,
         delay: 0.5,
         stagger: 0.1,
       });
     } else {
-      gsap.to(".nav-item", {
+      gsap.to(".nav-item-mobile", {
+        duration: 0,
         opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
       });
-      gsap.to(".navbar", {
+      gsap.to(".navbar-mobile", {
         x: "-100%",
-        duration: 0.5,
+        duration: 1,
         ease: "power2.in",
         opacity: 0,
-        display: "hidden",
+        display: "none",
       });
     }
   }, [menuOpen]);
@@ -44,7 +43,7 @@ const Navbar = () => {
   return (
     <nav className="bg-stone-200 bg-opacity-50 backdrop-blur-md px-4 py-2 flex justify-between items-center fixed top-0 left-0 w-full z-50">
       <Logo />
-      <div className="md:hidden relative">
+      <div id="hamburger-container" className="md:hidden relative">
         <button
           className={`hamburger hamburger--collapse z-50 ${
             menuOpen ? "fixed right-4 top-2 is-active" : ""
@@ -59,20 +58,25 @@ const Navbar = () => {
         </button>
       </div>
       <ul
-        className={`navbar flex-col md:flex md:flex-row space-y-4 md:space-y-0 md:space-x-8 ${
+        className={`navbar-mobile md:hidden flex-col space-y-4 ${
           menuOpen &&
-          "bg-stone-200 bg-opacity-95 backdrop-blur-md h-[100vh] w-full animate-navbarSlideIn z-40 items-center justify-center no-scroll"
-        } absolute md:relative top-0 left-0 right-0 md:top-auto md:left-auto md:right-auto md:bg-transparent transition-transform transform ${
-          menuOpen ? "translate-y-0" : "-translate-y-full"
-        } md:translate-y-0 md:transform-none w-full md:w-auto`}
+          "bg-stone-200 bg-opacity-95 backdrop-blur-md h-[100vh] w-full z-40 items-center justify-center no-scroll"
+        } fixed top-0 left-0 right-0 w-full transform -translate-x-full`}
       >
         {["home", "about", "projects", "contact"].map((text) => (
           <li
             key={text}
-            className={`nav-item opacity-0 md:pl-0 md:pb-0 pt-2 pl-4 pb-2 ${
-              menuOpen ? "text-2xl" : ""
-            }`}
+            className={`nav-item-mobile ${
+              menuOpen ? "opacity-0 text-2xl" : "opacity-100"
+            } pt-2 pl-4 pb-2`}
           >
+            <NavOption text={text} />
+          </li>
+        ))}
+      </ul>
+      <ul className="hidden md:flex md:flex-row space-x-8">
+        {["home", "about", "projects", "contact"].map((text) => (
+          <li key={text} className="opacity-100 md:pl-0 md:pb-0 pt-2 pl-4 pb-2">
             <NavOption text={text} />
           </li>
         ))}
