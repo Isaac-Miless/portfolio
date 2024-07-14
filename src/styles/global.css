@@ -8,6 +8,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root:has(.no-scroll) {
+  overflow: hidden;
+}
+
 * {
   scrollbar-width: thin;
   scroll-behavior: smooth;
