@@ -6,6 +6,18 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Hero = () => {
+  const disableTransitions = (elements) => {
+    elements.forEach((el) => {
+      if (el) el.style.transition = "none";
+    });
+  };
+
+  const enableTransitions = (elements) => {
+    elements.forEach((el) => {
+      if (el) el.style.transition = "";
+    });
+  };
+
   useGSAP(() => {
     const blobElement = document.querySelector(".blob");
     const heroTitle = document.querySelector(".hero-title");
@@ -16,75 +28,74 @@ const Hero = () => {
     const techStackItems = document.querySelectorAll(".tech-stack-item");
 
     // Temporarily disable CSS transitions
-    blobElement.style.transition = "none";
-    socialIcons.forEach((icon) => (icon.style.transition = "none"));
-    techStackItems.forEach((item) => (item.style.transition = "none"));
+    disableTransitions([blobElement, ...socialIcons, ...techStackItems]);
 
-    gsap.from(blobElement, {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        enableTransitions([blobElement, ...socialIcons, ...techStackItems]);
+      },
+    });
+
+    tl.from(blobElement, {
       y: 1000,
       duration: 1.5,
       ease: "back.out",
-      onComplete: () => {
-        // Re-enable CSS transitions
-        blobElement.style.transition = "";
-      },
-    });
-
-    gsap.from(heroTitle, {
-      y: 1000,
-      duration: 3,
-      delay: 1,
-      ease: "power2.out",
-    });
-
-    gsap.from(heroSubtext, {
-      y: 1000,
-      duration: 3,
-      delay: 2,
-      ease: "power2.out",
-    });
-
-    gsap.from(socialIcons, {
-      x: -1000,
-      opacity: 1,
-      duration: 3,
-      delay: 3,
-      stagger: 0.1,
-      ease: "back.out",
-      onComplete: () => {
-        // Re-enable CSS transitions
-        socialIcons.forEach((icon) => (icon.style.transition = "none"));
-      },
-    });
-
-    gsap.from(techStack, {
-      y: 1000,
-      borderRight: "none",
-      duration: 3,
-      delay: 4,
-      ease: "power2.out",
-    });
-
-    gsap.from(
-      techStackItems,
-      {
-        x: -50,
-        opacity: 0,
-        duration: 3,
-        stagger: {
-          amount: 1.5, // The amount of time to stagger the animations between each element
-          grid: [2, 1], // The number of columns and rows in the grid
-          axis: "y", // The axis to stagger the animations on
+    })
+      .from(
+        heroTitle,
+        {
+          y: 1000,
+          duration: 3,
+          ease: "power2.out",
+        },
+        "-=1"
+      )
+      .from(
+        heroSubtext,
+        {
+          y: 1000,
+          duration: 3,
+          ease: "power2.out",
+        },
+        "-=2"
+      )
+      .from(
+        socialIcons,
+        {
+          x: -1000,
+          opacity: 1,
+          duration: 3,
+          stagger: 0.1,
+          ease: "back.out",
+        },
+        "-=2"
+      )
+      .from(
+        techStack,
+        {
+          borderRight: "none",
+          y: 1000,
+          duration: 3,
+          ease: "power2.out",
+        },
+        "-=3"
+      )
+      .from(
+        techStackItems,
+        {
+          x: -50,
+          opacity: 0,
+          duration: 3,
+          stagger: {
+            amount: 1.5,
+            grid: [2, 1],
+            axis: "y",
+            from: "center",
+          },
           ease: "circ.inOut",
-          from: "center", // The starting position of the staggered animations
         },
-        onComplete: () => {
-          // Re-enable CSS transitions
-          techStackItems.forEach((item) => (item.style.transition = ""));
-        },
-      },
-      ">"
-    );
+        ">"
+      );
   }, []);
 
   return (

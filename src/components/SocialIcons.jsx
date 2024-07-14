@@ -9,7 +9,7 @@ function SocialIcons() {
         href="https://www.linkedin.com/in/isaac-miles-378934193/"
         target="_blank"
         rel="noopener noreferrer"
-        className="social-icons text-neutral w-8 h-8 md:scale-125 hover:rotate-12 hover:text-primary transition-transform duration-300 ease-in-out"
+        className="social-icons text-neutral w-8 h-8 md:scale-125 hover:text-primary transition-transform duration-300 ease-in-out"
       >
         <FontAwesomeIcon icon={faLinkedin} size="2xl" />
       </a>
@@ -17,7 +17,7 @@ function SocialIcons() {
         href="https://github.com/Isaac-Miless"
         target="_blank"
         rel="noopener noreferrer"
-        className="social-icons text-neutral md:scale-125 hover:rotate-12 hover:text-primary transition-transform duration-300 ease-in-out"
+        className="social-icons text-neutral w-8 h-8 md:scale-125 hover:text-primary transition-transform duration-300 ease-in-out"
       >
         <FontAwesomeIcon icon={faGithub} size="2xl" />
       </a>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import ReactIcon from "../../assets/icons/react.svg";
 import HtmlIcon from "../../assets/icons/html5.svg";
 import CssIcon from "../../assets/icons/css.svg";
@@ -35,12 +35,6 @@ function TechStack() {
               src={icon.src}
               alt={icon.alt}
               className="w-8 h-8 md:w-12 md:h-12 rounded-lg"
-              style={
-                {
-                  // animation: `slideInLeft 1s ease-out ${index * 0.3}s forwards`,
-                  // visibility: "hidden",
-                }
-              }
             />
           </div>
         ))}
