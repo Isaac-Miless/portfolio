@@ -32,7 +32,7 @@ const Navbar = () => {
       });
       gsap.to(".navbar-mobile", {
         x: "-100%",
-        duration: 1,
+        duration: 0,
         ease: "power2.in",
         opacity: 0,
         display: "none",
