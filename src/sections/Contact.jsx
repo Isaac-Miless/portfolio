@@ -42,7 +42,7 @@ function Contact() {
   return (
     <div
       id="contact"
-      className="flex flex-col text-md md:text-xl p-10 min-h-[30vh]"
+      className="flex bg-surface flex-col text-md md:text-xl p-10 min-h-[30vh]"
     >
       <div className="contact-header">
         <Header title="CONTACT" />

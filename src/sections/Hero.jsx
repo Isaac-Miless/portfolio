@@ -85,14 +85,14 @@ const Hero = () => {
         {
           x: -50,
           opacity: 0,
-          duration: 3,
+          duration: 1,
           stagger: {
             amount: 1.5,
             grid: [2, 1],
             axis: "y",
             from: "center",
           },
-          ease: "circ.inOut",
+          ease: "power2.out",
         },
         ">"
       );
