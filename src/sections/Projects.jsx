@@ -1,7 +1,33 @@
 import React from "react";
 import Header from "../components/Header";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
+  useGSAP(() => {
+    const projectsHeader = document.querySelector(".projects-header");
+    const projectsText = document.querySelector(".projects-text");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: projectsHeader,
+        start: "top bottom",
+      },
+    });
+
+    tl.from(projectsHeader, {
+      opacity: 0,
+      duration: 1,
+      y: 100,
+    }).from(projectsText, {
+      opacity: 0,
+      duration: 1,
+      x: -100,
+    });
+  }, []);
+
   return (
     <>
       <svg
@@ -25,8 +51,10 @@ function Projects() {
         id="projects"
         className="flex flex-col p-10 min-h-[20vh] bg-stone-200"
       >
-        <Header title="PROJECTS" />
-        <div className="text-3xl md:text-3xl lg:text-5xl py-5 text-neutral font-bold">
+        <div className="projects-header">
+          <Header title="PROJECTS" />
+        </div>
+        <div className="projects-text text-3xl md:text-3xl lg:text-5xl py-5 text-neutral font-bold">
           Projects coming <span className="text-primary">soon</span>! 🚧
         </div>
       </div>
