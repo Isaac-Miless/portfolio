@@ -70,4 +70,4 @@ Feel free to reach out if you have any feedback or questions!
 
 Email: isaacmiles36@gmail.com
 LinkedIn: https://www.linkedin.com/in/isaac-miless/
-Website: https://imiles.netlify.app/
+Website: https://imiles.dev/
