@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-Welcome to my personal portfolio website! This project serves as a platform to showcase my work and technical skills while experimenting with modern web technologies. You can view the live site [here](https://imiles.netlify.app/).
+Welcome to my personal portfolio website! This project serves as a platform to showcase my work and technical skills while experimenting with modern web technologies. You can view the live site [here](https://imiles.dev/).
 
 ## Table of Contents
 
