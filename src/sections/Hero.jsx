@@ -39,7 +39,7 @@ const Hero = () => {
     tl.from(blobElement, {
       y: 1000,
       duration: 1.5,
-      ease: "back.out",
+      ease: "back.out(0.6))",
     })
       .from(
         heroTitle,
