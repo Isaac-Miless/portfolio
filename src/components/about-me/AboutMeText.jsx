@@ -42,11 +42,11 @@ function AboutMeText() {
           {/* About Me Text */}
           <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 w-full lg:w-[55%] lg:min-h-[300px] order-3 lg:order-none h-full">
             <CardContent className="pt-6">
-              <p className="text-lg lg:text-xl text-neutral lg:translate-y-2">
-                Hello! I'm <span className="text-primary font-semibold">Isaac</span>, a Software Engineering student at
-                the University of Kent. My passion is working on impactful projects, and learning and tinkering with new
-                technologies. I want to be the best engineer I can be, and I'm always looking for opportunities to grow
-                and learn.
+              <p className="text-lg lg:text-xl text-neutral lg:translate-y-6">
+              Hello! I'm <span className="text-primary font-semibold">Isaac</span>, a Software Engineering student 
+              at the University of Kent. I love building impactful projects and exploring 
+              new technologies, and I'm always seeking opportunities to grow as an engineer.
+              If you're interested in working together, feel free to <a href="#contact" className="text-primary font-semibold">reach out</a>!
               </p>
             </CardContent>
           </Card>
