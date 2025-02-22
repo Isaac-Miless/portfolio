@@ -1,32 +1,48 @@
-import React from "react";
-import Header from "../components/Header";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+import Header from "../components/Header"
+import { Card, CardContent, CardFooter } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
+import { GitCompare, ExternalLink } from "lucide-react"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/all"
+gsap.registerPlugin(ScrollTrigger)
 
 function Projects() {
+  const projects = [
+    {
+      title: "Portfolio Website",
+      description:
+        "Personal portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
+      techStack: ["React", "Tailwind CSS", "GSAP"],
+      github: "https://github.com/Isaac-Miless/portfolio",
+      live: "https://isaac-miles.vercel.app",
+    },
+    // TODO: need to list my other projects here 
+  ]
+
   useGSAP(() => {
-    const projectsHeader = document.querySelector(".projects-header");
-    const projectsText = document.querySelector(".projects-text");
+    const projectsHeader = document.querySelector(".projects-header")
+    const projectCards = document.querySelectorAll(".project-card")
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: projectsHeader,
         start: "top bottom",
       },
-    });
+    })
 
     tl.from(projectsHeader, {
       opacity: 0,
       duration: 1,
       y: 100,
-    }).from(projectsText, {
+    }).from(projectCards, {
       opacity: 0,
-      duration: 1,
-      x: -100,
-    });
-  }, []);
+      duration: 0.5,
+      y: 50,
+      stagger: 0.2,
+      immediateRender: false, // Prevents immediate application of the starting state
+    })
+  }, [])
 
   return (
     <>
@@ -47,15 +63,53 @@ function Projects() {
         ></path>
       </svg>
 
-      <div
-        id="projects"
-        className="flex flex-col p-10 min-h-[20vh] bg-stone-200"
-      >
-        <div className="projects-header">
-          <Header title="PROJECTS" />
-        </div>
-        <div className="projects-text text-3xl md:text-3xl lg:text-5xl py-5 text-neutral font-bold">
-          Projects coming <span className="text-primary">soon</span>! 🚧
+      <div id="projects" className="flex flex-col p-10 min-h-[20vh] bg-stone-200">
+        <div className="max-w-4xl mx-auto w-full">
+          <div className="projects-header mb-8">
+            <Header title="PROJECTS" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="project-card border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 group"
+              >
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-neutral mb-2">{project.title}</h3>
+                  <p className="text-neutral/80 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.techStack.map((tech, i) => (
+                      <Badge key={i} variant="secondary" className="text-sm py-1 px-3">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="px-6 pb-6 pt-0 flex gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-neutral hover:text-primary transition-colors"
+                  >
+                    <GitCompare className="w-5 h-5" />
+                    <span>GitHub</span>
+                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-neutral hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -77,7 +131,7 @@ function Projects() {
         ></path>
       </svg>
     </>
-  );
+  )
 }
 
-export default Projects;
+export default Projects
