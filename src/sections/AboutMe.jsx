@@ -2,6 +2,8 @@ import AboutMeText from "../components/about-me/AboutMeText"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/all"
+import Header from "../components/ui/Header"
+
 gsap.registerPlugin(ScrollTrigger)
 
 function AboutMe() {
@@ -29,9 +31,14 @@ function AboutMe() {
   }, [])
 
   return (
-    <div id="about" className="flex flex-col bg-surface justify-center items-center min-h-[90vh] py-16">
-      <div className="relative flex flex-col items-center justify-center w-full max-w-4xl">
-        <AboutMeText />
+    <div className="flex flex-col p-10 min-h-[20vh]">
+      <div className="about-me-header">
+          <Header title="ABOUT ME" />
+      </div>
+      <div id="about" className="flex flex-col bg-surface justify-center items-center min-h-[90vh] py-16">
+        <div className="relative flex flex-col items-center justify-center w-full max-w-4xl">
+          <AboutMeText />
+        </div>
       </div>
     </div>
   )

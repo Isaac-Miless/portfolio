@@ -1,4 +1,3 @@
-import Header from "../Header"
 import { Badge } from "../../components/ui/badge"
 import { Card, CardContent } from "../../components/ui/card"
 import { Building2, GraduationCap, Trophy } from "lucide-react"
@@ -34,9 +33,6 @@ function AboutMeText() {
 
   return (
     <div className="w-full px-4 max-w-6xl mx-auto">
-      <div className="about-me-header">
-        <Header title="ABOUT ME" />
-      </div>
 
       <div className="about-me-txt mt-8 space-y-6">
         <div className="intro-section flex flex-col lg:flex-row justify-center items-stretch gap-8">
