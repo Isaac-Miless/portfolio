@@ -1,6 +1,6 @@
 import { Badge } from "../../components/ui/badge"
 import { Card, CardContent } from "../../components/ui/card"
-import { Building2, GraduationCap, Trophy } from "lucide-react"
+import { Building2, GraduationCap, Trophy, MapPin } from "lucide-react"
 import Iceland from "../../assets/iceland.png"
 
 function AboutMeText() {
@@ -9,22 +9,25 @@ function AboutMeText() {
       title: "Software Engineer Industrial Placement",
       company: "BAE Systems",
       icon: <Building2 className="w-5 h-5 text-primary" />,
+      location: "Rochester, UK",
       date: "Upcoming",
       type: "work",
-      description: "12-month industrial placement",
+      description: "12-month Industrial Placement",
     },
     {
       title: "Spring Intern",
       company: "BlackRock",
       icon: <Building2 className="w-5 h-5 text-primary" />,
-      date: "Spring 2024",
+      location: "London, UK",
+      date: "Spring 2025",
       type: "work",
-      description: "SWE Spring Insight Week -- Alladin Engineering Team",
+      description: "SWE Spring Insight Week in BlackRock's Alladin Engineering Team",
     },
     {
       title: "BSc Software Engineering",
       company: "University of Kent",
       icon: <GraduationCap className="w-5 h-5 text-primary" />,
+      location: "Canterbury, UK",
       date: "2023 - 2027",
       achievement: "91% First Year Average",
       type: "education",
@@ -81,6 +84,10 @@ function AboutMeText() {
                         )}
                       </div>
                       <p className="text-neutral/80">{exp.company}</p>
+                      <div className="flex items-center gap-1 mt-1">
+                        <MapPin className="w-3 h-3 text-primary/70" />
+                        <p className="text-sm text-neutral/70">{exp.location}</p>
+                      </div>
                       <p className="text-sm text-neutral/60 mt-1">{exp.date}</p>
                       {exp.description && <p className="text-sm text-neutral/70 mt-2">{exp.description}</p>}
                     </div>
