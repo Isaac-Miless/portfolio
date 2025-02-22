@@ -32,10 +32,10 @@ function AboutMe() {
 
   return (
     <div className="flex flex-col p-10 min-h-[20vh]">
-      <div className="about-me-header">
-          <Header title="ABOUT ME" />
-      </div>
       <div id="about" className="flex flex-col bg-surface justify-center items-center min-h-[90vh] py-16">
+        <div className="about-me-header text-left w-full max-w-4xl">
+            <Header title="ABOUT ME" />
+        </div>
         <div className="relative flex flex-col items-center justify-center w-full max-w-4xl">
           <AboutMeText />
         </div>
