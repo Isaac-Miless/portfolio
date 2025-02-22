@@ -5,14 +5,14 @@ import Iceland from "../../assets/iceland.png"
 
 function AboutMeText() {
   const experiences = [
-    // {
-    //   title: "Software Engineer Industrial Placement",
-    //   company: "BAE Systems",
-    //   icon: <Building2 className="w-5 h-5 text-primary" />,
-    //   date: "Upcoming",
-    //   type: "work",
-    //   description: "12-month industrial placement",
-    // },
+    {
+      title: "Software Engineer Industrial Placement",
+      company: "BAE Systems",
+      icon: <Building2 className="w-5 h-5 text-primary" />,
+      date: "Upcoming",
+      type: "work",
+      description: "12-month industrial placement",
+    },
     {
       title: "Spring Intern",
       company: "BlackRock",
