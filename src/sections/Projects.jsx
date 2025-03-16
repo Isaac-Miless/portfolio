@@ -79,7 +79,7 @@ function Projects() {
       </svg>
 
       <div id="projects" className="flex flex-col items-center p-10 min-h-[20vh] bg-stone-200">
-        <div className="projects-header text-center w-full max-w-4xl mb-8">
+        <div className="projects-header w-full max-w-4xl mb-8">
           <Header title="PROJECTS" />
           <div className="projects-intro text-3xl md:text-3xl lg:text-5xl py-5 text-neutral font-bold">
             My <span className="text-primary">latest</span> work

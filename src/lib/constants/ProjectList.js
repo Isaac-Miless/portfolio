@@ -1,6 +1,7 @@
 // Import assets
-import PortfolioImage from "../../assets/projects/portfolio2.png";
+import PortfolioImage from "../../assets/projects/portfolio.png";
 import ProjectAPIImage from "../../assets/projects/project-api.jpg";
+import PDFMergerImage from "../../assets/projects/pdf-merger.png";
 
 // Import icons
 import ReactIcon from "../../assets/icons/react.svg";
@@ -73,6 +74,24 @@ const projects = [
       },
     ],
     githubUrl: "https://github.com/Isaac-Miless/project-api",
+  },
+  {
+    id: "3",
+    title: "PDF Merger",
+    description:
+      "A simple React app that merges multiple PDF files into a single PDF.",
+    image: PDFMergerImage,
+    techStack: [
+      {
+        name: "React",
+        icon: ReactIcon,
+      },
+      {
+        name: "TypeScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+    ],
+    githubUrl: "https://github.com/Isaac-Miless/pdf-joiner-site",
   },
 ];
 
