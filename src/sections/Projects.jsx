@@ -1,32 +1,63 @@
-import React from "react";
-import Header from "../components/ui/Header";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+"use client"
+
+import { useState } from "react"
+import Header from "../components/ui/Header"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/all"
+import ProjectCard from "../components/projects/ProjectCard"
+import projects from "../lib/constants/ProjectList"
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger)
 
 function Projects() {
-  useGSAP(() => {
-    const projectsHeader = document.querySelector(".projects-header");
-    const projectsText = document.querySelector(".projects-text");
+  const [, setHoveredProject] = useState(null)
 
-    const tl = gsap.timeline({
+  useGSAP(() => {
+    // Animation for the header and intro text
+    const projectsHeader = document.querySelector(".projects-header")
+    const projectsIntro = document.querySelector(".projects-intro")
+
+    const tlIntro = gsap.timeline({
       scrollTrigger: {
         trigger: projectsHeader,
         start: "top bottom",
       },
-    });
+    })
 
-    tl.from(projectsHeader, {
-      opacity: 0,
-      duration: 1,
-      y: 100,
-    }).from(projectsText, {
-      opacity: 0,
-      duration: 1,
-      x: -100,
-    });
-  }, []);
+    tlIntro
+      .from(projectsHeader, {
+        opacity: 0,
+        duration: 1,
+        y: 100,
+      })
+      .from(
+        projectsIntro,
+        {
+          opacity: 0,
+          duration: 1,
+          x: -100,
+        },
+        "-=0.5",
+      )
+
+    // Animation for project cards
+    const projectCards = document.querySelectorAll(".project-card")
+
+    projectCards.forEach((card, index) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: 0.2 * index,
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom-=100",
+        },
+      })
+    })
+  }, [])
 
   return (
     <>
@@ -47,15 +78,25 @@ function Projects() {
         ></path>
       </svg>
 
-      <div
-        id="projects"
-        className="flex flex-col p-10 min-h-[20vh] bg-stone-200"
-      >
-        <div className="projects-header">
+      <div id="projects" className="flex flex-col items-center p-10 min-h-[20vh] bg-stone-200">
+        <div className="projects-header text-center w-full max-w-4xl mb-8">
           <Header title="PROJECTS" />
+          <div className="projects-intro text-3xl md:text-3xl lg:text-5xl py-5 text-neutral font-bold">
+            My <span className="text-primary">latest</span> work
+          </div>
         </div>
-        <div className="projects-text text-3xl md:text-3xl lg:text-5xl py-5 text-neutral font-bold">
-          Projects coming <span className="text-primary">soon</span>! 🚧
+
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 place-items-center">
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onHoverStart={setHoveredProject}
+                onHoverEnd={setHoveredProject}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -76,8 +117,31 @@ function Projects() {
           transform="rotate(-180 720 200)"
         ></path>
       </svg>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        @keyframes scrollTech {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-20%);
+          }
+        }
+        
+        .tech-carousel {
+          animation: scrollTech 10s linear infinite alternate;
+        }
+        
+        .tech-carousel:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </>
-  );
+  )
 }
 
 export default Projects;

@@ -20,3 +20,30 @@
 body {
   overflow-x: hidden;
 }
+
+/* Carousel styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes scrollTech {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+.tech-carousel {
+  animation: scrollTech 10s linear infinite alternate;
+}
+
+.tech-carousel:hover {
+  animation-play-state: paused;
+}

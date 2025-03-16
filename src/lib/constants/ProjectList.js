@@ -1,15 +1,16 @@
-// src/lib/constants/projects.js
-
 // Import assets
-import PortfolioImage from "../../assets/images/projects/imiles.dev_.png";
+import PortfolioImage from "../../assets/projects/portfolio2.png";
+import ProjectAPIImage from "../../assets/projects/project-api.jpg";
+
+// Import icons
 import ReactIcon from "../../assets/icons/react.svg";
 import HtmlIcon from "../../assets/icons/html5.svg";
 import CssIcon from "../../assets/icons/css.svg";
 import JavascriptIcon from "../../assets/icons/javascript.svg";
 import TailwindIcon from "../../assets/icons/tailwind.svg";
-import PythonIcon from "../../assets/icons/python.svg";
-import JavaIcon from "../../assets/icons/java.svg";
-import SassIcon from "../../assets/icons/sass.svg";
+// import PythonIcon from "../../assets/icons/python.svg";
+// import JavaIcon from "../../assets/icons/java.svg";
+// import SassIcon from "../../assets/icons/sass.svg";
 
 /**
  * @typedef {Object} Project
@@ -54,6 +55,24 @@ const projects = [
     ],
     githubUrl: "https://github.com/Isaac-Miless/portfolio",
     liveUrl: "https://imiles.dev",
+  },
+  {
+    id: "2",
+    title: "Project API",
+    description:
+      "A CRUD API for managing projects built with Go and PostgreSQL. It includes endpoints for creating, reading, updating, and deleting projects.",
+    image: ProjectAPIImage,
+    techStack: [
+      {
+        name: "Go",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+      },
+      {
+        name: "PostgreSQL",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      },
+    ],
+    githubUrl: "https://github.com/Isaac-Miless/project-api",
   },
 ];
 
