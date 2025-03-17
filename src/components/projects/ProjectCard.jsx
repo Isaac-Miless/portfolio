@@ -24,7 +24,7 @@ const ProjectCard = ({ project, onHoverStart, onHoverEnd }) => {
   return (
     <motion.div
       key={project.id}
-      className="project-card group relative overflow-hidden rounded-xl border bg-white transition-all hover:shadow-lg"
+      className="project-card group relative overflow-hidden rounded-xl border bg-white transition-all hover:shadow-lg w-full max-w-sm h-full flex flex-col"
       whileHover={{ y: -5 }}
       onHoverStart={() => onHoverStart(project.id)}
       onHoverEnd={() => onHoverEnd(null)}
@@ -37,11 +37,15 @@ const ProjectCard = ({ project, onHoverStart, onHoverEnd }) => {
         />
       </div>
 
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold">{project.title}</h3>
-        <p className="mt-2 text-stone-600 line-clamp-2">{project.description}</p>
 
-        <div className="mt-4">
+        {/* Fixed height description container */}
+        <div className="h-[4.5rem] mt-2">
+          <p className="text-stone-600 md:text-sm line-clamp-3">{project.description}</p>
+        </div>
+
+        <div className="mt-4 flex-grow">
           {project.techStack.length > TECH_STACK_THRESHOLD ? (
             <TechStackCarousel techStack={project.techStack} />
           ) : (

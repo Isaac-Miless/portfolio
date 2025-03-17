@@ -30,7 +30,7 @@ const projects = [
     id: "1",
     title: "This Website",
     description:
-      "This is my personal website built with React and Tailwind CSS. It showcases my experience, projects, and more.",
+      "This is my portfolio website. It showcases my experience, projects, and more.",
     image: PortfolioImage,
     techStack: [
       {
@@ -61,7 +61,7 @@ const projects = [
     id: "2",
     title: "Project API",
     description:
-      "A CRUD API for managing projects built with Go and PostgreSQL. It includes endpoints for creating, reading, updating, and deleting projects.",
+      "A CRUD API for managing projects. It includes endpoints for creating, reading, updating, and deleting projects.",
     image: ProjectAPIImage,
     techStack: [
       {
@@ -77,7 +77,7 @@ const projects = [
   },
   {
     id: "3",
-    title: "PDF Merger",
+    title: "PDF Joiner",
     description:
       "A simple React app that merges multiple PDF files into a single PDF.",
     image: PDFMergerImage,
