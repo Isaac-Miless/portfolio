@@ -65,9 +65,10 @@ const Navbar = () => {
     resizeObserver.observe(navRef.current)
 
     // Clean up
+    const nav = navRef.current
     return () => {
-      if (navRef.current) {
-        resizeObserver.unobserve(navRef.current)
+      if (nav) {
+        resizeObserver.unobserve(nav)
       }
     }
   }, [])
