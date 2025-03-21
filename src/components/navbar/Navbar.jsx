@@ -84,7 +84,7 @@ const Navbar = () => {
         className="bg-stone-200 bg-opacity-50 backdrop-blur-md px-4 py-2 flex justify-between items-center fixed top-0 left-0 w-full z-50"
       >
         {/* Solid element behind the navbar - same size but transparent */}
-        <div className="absolute inset-0 bg-stone-200 z-[-1]"></div>
+        {/* <div className="absolute inset-0 bg-stone-200 z-[-1]"></div> */}
 
         <Logo />
         <div id="hamburger-container" className="md:hidden relative">
