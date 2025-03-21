@@ -1,5 +1,5 @@
 // Import assets
-import PortfolioImage from "../../assets/projects/portfolio.png";
+import PortfolioImage from "../../assets/blob-image.jpg";
 import ProjectAPIImage from "../../assets/projects/project-api.jpg";
 import PDFMergerImage from "../../assets/projects/pdf-merger.png";
 
