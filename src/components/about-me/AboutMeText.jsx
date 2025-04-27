@@ -2,40 +2,12 @@ import { Badge } from "../../components/ui/badge"
 import { Card, CardContent } from "../../components/ui/card"
 import { Building2, GraduationCap, Trophy, MapPin } from "lucide-react"
 import Iceland from "../../assets/iceland.png"
+import experiences from "../../lib/constants/ExperienceList"
 
 function AboutMeText() {
-  const experiences = [
-    {
-      title: "Software Engineer Industrial Placement",
-      company: "BAE Systems",
-      icon: <Building2 className="w-5 h-5 text-primary" />,
-      location: "Rochester, UK",
-      date: "Upcoming",
-      type: "work",
-      description: "12-month Industrial Placement",
-    },
-    {
-      title: "Spring Intern",
-      company: "BlackRock",
-      icon: <Building2 className="w-5 h-5 text-primary" />,
-      location: "London, UK",
-      date: "Spring 2025",
-      type: "work",
-      description: "SWE Spring Insight Week in BlackRock's Alladin Engineering Team",
-    },
-    {
-      title: "BSc Software Engineering",
-      company: "University of Kent",
-      icon: <GraduationCap className="w-5 h-5 text-primary" />,
-      location: "Canterbury, UK",
-      date: "2023 - 2027",
-      achievement: "91% First Year Average",
-      type: "education",
-    },
-  ]
 
   return (
-    <div className="w-full px-4 max-w-6xl mx-auto">
+    <div className="w-full md:px-4 max-w-6xl mx-auto">
 
       <div className="about-me-txt mt-8 space-y-6">
         <div className="intro-section flex flex-col lg:flex-row justify-center items-stretch gap-8">
