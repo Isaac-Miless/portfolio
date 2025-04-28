@@ -1,6 +1,6 @@
 import { Badge } from "../../components/ui/badge"
 import { Card, CardContent } from "../../components/ui/card"
-import { Building2, GraduationCap, Trophy, MapPin } from "lucide-react"
+import { Trophy, MapPin } from "lucide-react"
 import Iceland from "../../assets/iceland.png"
 import experiences from "../../lib/constants/ExperienceList"
 
