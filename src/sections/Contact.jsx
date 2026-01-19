@@ -1,13 +1,9 @@
 import React from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "../components/ui/Header";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
-
-const EMAIL = "isaacmiles36@gmail.com";
 
 function Contact() {
   useGSAP(() => {
