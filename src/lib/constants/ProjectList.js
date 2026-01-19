@@ -1,7 +1,7 @@
 // Import assets
 import PortfolioImage from "../../assets/blob-image.jpg";
 import ProjectAPIImage from "../../assets/projects/project-api.jpg";
-import PDFMergerImage from "../../assets/projects/pdf-merger.png";
+import TangoSolverImage from "../../assets/projects/tango-solver.png";
 
 // Import icons
 import ReactIcon from "../../assets/icons/react.svg";
@@ -77,21 +77,26 @@ const projects = [
   },
   {
     id: "3",
-    title: "PDF Joiner",
+    title: "Tango Solver",
     description:
-      "A simple React app that merges multiple PDF files into a single PDF.",
-    image: PDFMergerImage,
+      "A educative web-based solver for Tango, as seen on LinkedIn.",
+    image: TangoSolverImage,
     techStack: [
       {
         name: "React",
         icon: ReactIcon,
       },
       {
-        name: "TypeScript",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        name: "CSS",
+        icon: CssIcon,
+      },
+      {
+        name: "JavaScript",
+        icon: JavascriptIcon,
       },
     ],
-    githubUrl: "https://github.com/Isaac-Miless/pdf-joiner-site",
+    githubUrl: "https://github.com/Isaac-Miless/Tango-Solver",
+    liveUrl: "https://isaac-miless.github.io/Tango-Solver/"
   },
 ];
 

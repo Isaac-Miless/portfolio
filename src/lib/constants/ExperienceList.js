@@ -15,13 +15,22 @@ import { Building2, GraduationCap } from "lucide-react";
 /** @type {Experience[]} */
 const experiences = [
     {
+      title: "Aladdin Application Engineer, Intern",
+      company: "BlackRock",
+      icon: <Building2 className="w-5 h-5 text-primary" />,
+      location: "London, UK",
+      date: "Jun 2026 - Aug 2026",
+      type: "work",
+      description: "8-Week Summer Internship",
+    },
+    {
       title: "Software Engineer Industrial Placement",
       company: "BAE Systems",
       icon: <Building2 className="w-5 h-5 text-primary" />,
       location: "Rochester, UK",
-      date: "Upcoming",
+      date: "Jun 2025 - Jun 2026",
       type: "work",
-      description: "12-month Industrial Placement",
+      description: "12-Month Industrial Placement",
     },
     {
       title: "Spring Intern",
@@ -38,7 +47,7 @@ const experiences = [
       icon: <GraduationCap className="w-5 h-5 text-primary" />,
       location: "Canterbury, UK",
       date: "2023 - 2027",
-      achievement: "91% First Year Average",
+      achievement: "90% Second Year Average",
       type: "education",
     },
 ]
